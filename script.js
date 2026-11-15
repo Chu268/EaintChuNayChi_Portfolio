@@ -1,0 +1,36 @@
+const projects={
+  letters:{index:'01 / DEEP LEARNING',title:'CNN Letter Recognition & RNN Sentiment Analysis',summary:'Two complementary deep-learning studies exploring visual classification and multilingual language understanding.',challenge:'Recognise all 26 handwritten letter classes reliably, then classify multilingual pizza reviews as positive, neutral, or negative.',approach:'Built preprocessing and orientation correction pipelines, used augmentation, batch normalisation and dropout, and compared SimpleRNN, LSTM, Masked LSTM, and GRU architectures.',result:'The CNN reached 94.99% test accuracy; the translated Masked LSTM reached 91% sentiment accuracy.',url:'https://github.com/Chu268/CNN-and-RNN-Deep-Learning-Projects'},
+  employment:{index:'02 / DATA ANALYTICS',title:'Singapore IT Employment Analytics',summary:'An evidence-led look at the degree-versus-diploma decision in Singaporeâ€™s technology sector.',challenge:'Make salary, employment, stability, and demand trade-offs understandable for students choosing an IT education path.',approach:'Analysed Ministry of Manpower employment datasets with Python, Pandas, Matplotlib and Seaborn, with UiPath supporting the workflow.',result:'Found that degrees tend to lead in long-term salary growth and stability, while diplomas offer faster workforce entry.',url:'https://github.com/Chu268/singapore-it-employment-analytics'},
+  forecasting:{index:'03 / MACHINE LEARNING',title:'Customer Segmentation & Energy Forecasting',summary:'A paired machine-learning study spanning customer behaviour and time-series demand.',challenge:'Reveal useful customer groups and forecast gas, electricity, and water demand with models that can be compared clearly.',approach:'Used K-Means and hierarchical clustering with PCA, elbow and silhouette analysis; compared ETS, Holt-Winters, and SARIMAX forecasts.',result:'Produced interpretable customer segments and model-by-model forecasts grounded in stationarity, decomposition, and error comparison.',url:'https://github.com/Chu268/Machine-Learning-Customer-Segmentation-and-Forecasting'},
+  rps:{index:'04 / FULL-STACK',title:'Rock Paper Scissors Arena',summary:'The first full-stack project that turned backend concepts into a complete, interactive product.',challenge:'Connect game interactions, server-side logic, persistence, and a responsive interface into one reliable experience.',approach:'Built with JavaScript, Node.js, Express, SQL, REST APIs, HTML and CSS, with careful attention to system integration.',result:'Delivered an end-to-end game platform and gained the confidence to tackle more ambitious backend systems.',url:'https://github.com/Chu268/rock-paper-scissors-arena'}
+};
+
+const body=document.body,progressBar=document.querySelector('#progressBar'),modeToggle=document.querySelector('#modeToggle');
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');revealObserver.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+
+window.addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;progressBar.style.width=`${max?scrollY/max*100:0}%`},{passive:true});
+
+modeToggle.addEventListener('click',()=>{const on=!body.classList.contains('recruiter-mode');body.classList.toggle('recruiter-mode',on);modeToggle.setAttribute('aria-pressed',String(on));modeToggle.querySelector('span:last-child').textContent=on?'Full experience':'Recruiter view'});
+
+document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));button.classList.add('active');const filter=button.dataset.filter;document.querySelectorAll('.project-card').forEach(card=>card.classList.toggle('hidden',filter!=='all'&&!card.dataset.category.split(' ').includes(filter)))}));
+
+const projectDialog=document.querySelector('#projectDialog');
+function openProject(key){const p=projects[key];if(!p)return;['Index','Title','Summary','Challenge','Approach','Result'].forEach(field=>document.querySelector(`#dialog${field}`).textContent=p[field.toLowerCase()]);document.querySelector('#dialogLink').href=p.url;projectDialog.showModal()}
+document.querySelectorAll('.project-card').forEach(card=>{card.querySelector('.open-project').addEventListener('click',()=>openProject(card.dataset.project));card.addEventListener('keydown',e=>{if(e.key==='Enter')openProject(card.dataset.project)})});
+document.querySelector('.dialog-close').addEventListener('click',()=>projectDialog.close());projectDialog.addEventListener('click',e=>{if(e.target===projectDialog)projectDialog.close()});
+
+const orbit=document.querySelector('#orbit');if(!reduced){document.querySelector('.hero-visual').addEventListener('pointermove',e=>{const r=e.currentTarget.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;orbit.style.transform=`perspective(900px) rotateY(${x*8}deg) rotateX(${-y*8}deg) translate(${x*7}px,${y*7}px)`});document.querySelector('.hero-visual').addEventListener('pointerleave',()=>orbit.style.transform='')}
+
+const commandDialog=document.querySelector('#commandDialog'),commandInput=document.querySelector('#commandInput'),commandButtons=[...document.querySelectorAll('.command-results button')];let selected=0;
+function openCommand(){commandDialog.showModal();commandInput.value='';filterCommands();setTimeout(()=>commandInput.focus(),30)}
+function filterCommands(){const q=commandInput.value.toLowerCase();let visible=commandButtons.filter(b=>{const show=b.textContent.toLowerCase().includes(q);b.hidden=!show;b.classList.remove('selected');return show});selected=0;if(visible[0])visible[0].classList.add('selected')}
+function runCommand(button){commandDialog.close();if(button.dataset.target)document.querySelector(button.dataset.target).scrollIntoView();else window.open(button.dataset.url,'_blank','noopener')}
+document.querySelector('.command-trigger').addEventListener('click',openCommand);commandInput.addEventListener('input',filterCommands);commandButtons.forEach(b=>b.addEventListener('click',()=>runCommand(b)));
+document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openCommand()}else if(e.key==='/'&&!['INPUT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();openCommand()}});
+commandDialog.addEventListener('keydown',e=>{const visible=commandButtons.filter(b=>!b.hidden);if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();selected=(selected+(e.key==='ArrowDown'?1:-1)+visible.length)%visible.length;visible.forEach((b,i)=>b.classList.toggle('selected',i===selected))}if(e.key==='Enter'&&visible[selected]){e.preventDefault();runCommand(visible[selected])}});
+
+function updateClock(){const time=new Intl.DateTimeFormat('en-SG',{timeZone:'Asia/Singapore',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date());document.querySelector('#localTime').textContent=`${time} SGT`};updateClock();setInterval(updateClock,60000);
+
