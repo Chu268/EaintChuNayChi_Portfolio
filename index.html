@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Eaint Chu Nay Chi â€” Applied AI & Analytics student, data analyst and backend developer in Singapore.">
+  <meta name="theme-color" content="#121513">
+  <title>Eaint Chu Nay Chi â€” Applied AI & Analytics</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Eaint Chu Nay Chi, home">
+      <span class="brand-mark">EC</span>
+      <span class="brand-name">Eaint Chu Nay Chi</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#experience">Journey</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button command-trigger" type="button" aria-label="Open quick navigation">âŒ˜K</button>
+      <button class="mode-toggle" id="modeToggle" type="button" aria-pressed="false">
+        <span class="mode-dot"></span><span>Recruiter view</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="status-pulse"></span> Singapore Â· Open to internships</p>
+        <h1 id="hero-title">I turn complex data into <em>useful systems.</em></h1>
+        <p class="hero-intro">Applied AI & Analytics student building at the intersection of machine learning, data storytelling, and backend engineering.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work">Explore selected work <span aria-hidden="true">â†˜</span></a>
+          <a class="button button-quiet" href="https://www.linkedin.com/in/eaintchunaychi" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">â†—</span></a>
+        </div>
+        <div class="proof-strip" aria-label="Highlights">
+          <div><strong data-count="3.97">3.97</strong><span>/ 4.00 GPA</span></div>
+          <div><strong>Top 10%</strong><span>Directorâ€™s Honour Roll</span></div>
+          <div><strong>94.99%</strong><span>CNN test accuracy</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" aria-label="Interactive map of Eaint's disciplines">
+        <div class="visual-label"><span>01</span> Systems map</div>
+        <div class="orbit" id="orbit">
+          <div class="orbit-ring ring-one"></div>
+          <div class="orbit-ring ring-two"></div>
+          <div class="orbit-core"><span>EC</span><small>builds here</small></div>
+          <div class="orbit-node node-ai"><span>AI / ML</span><small>models</small></div>
+          <div class="orbit-node node-data"><span>DATA</span><small>insight</small></div>
+          <div class="orbit-node node-backend"><span>BACKEND</span><small>systems</small></div>
+          <svg class="orbit-lines" viewBox="0 0 600 600" aria-hidden="true">
+            <path d="M300 300 L166 136 M300 300 L465 190 M300 300 L410 474"/>
+            <circle cx="300" cy="300" r="5"/>
+          </svg>
+        </div>
+        <p class="visual-note">Move your cursor. The system responds.</p>
+      </div>
+    </section>
+
+    <section class="marquee" aria-label="Core capabilities">
+      <div class="marquee-track">
+        <span>PYTHON</span><i>âœ¦</i><span>TENSORFLOW</span><i>âœ¦</i><span>DATA STORYTELLING</span><i>âœ¦</i><span>NODE.JS</span><i>âœ¦</i><span>SQL</span><i>âœ¦</i><span>SCIKIT-LEARN</span><i>âœ¦</i>
+        <span aria-hidden="true">PYTHON</span><i aria-hidden="true">âœ¦</i><span aria-hidden="true">TENSORFLOW</span><i aria-hidden="true">âœ¦</i><span aria-hidden="true">DATA STORYTELLING</span><i aria-hidden="true">âœ¦</i><span aria-hidden="true">NODE.JS</span><i aria-hidden="true">âœ¦</i><span aria-hidden="true">SQL</span><i aria-hidden="true">âœ¦</i><span aria-hidden="true">SCIKIT-LEARN</span><i aria-hidden="true">âœ¦</i>
+      </div>
+    </section>
+
+    <section class="work section-shell" id="work" aria-labelledby="work-title">
+      <div class="section-heading reveal">
+        <div><p class="section-index">02 / Selected work</p><h2 id="work-title">Proof, not promises.</h2></div>
+        <p>Projects where analysis meets implementationâ€”each built to answer a real question or make a complex system usable.</p>
+      </div>
+      <div class="filters reveal" role="group" aria-label="Filter projects">
+        <button class="filter active" data-filter="all" type="button">All <sup>04</sup></button>
+        <button class="filter" data-filter="ai" type="button">AI & ML <sup>02</sup></button>
+        <button class="filter" data-filter="data" type="button">Data <sup>02</sup></button>
+        <button class="filter" data-filter="fullstack" type="button">Full-stack <sup>01</sup></button>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card featured reveal" data-category="ai" tabindex="0" data-project="letters">
+          <div class="project-art art-letters" aria-hidden="true">
+            <div class="scan-line"></div><span class="letter-sample">A</span><span class="confidence">94.99% match</span>
+            <div class="pixel-grid"></div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta"><span>Deep learning Â· 2026</span><span>01</span></div>
+            <h3>Reading handwriting. Understanding sentiment.</h3>
+            <p>Two neural systems: a 26-class CNN for handwritten letters and a multilingual RNN study for pizza-review sentiment.</p>
+            <div class="tags"><span>TensorFlow</span><span>CNN</span><span>LSTM</span><span>NLP</span></div>
+            <button class="text-link open-project" type="button">View case study <span>â†—</span></button>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="data" tabindex="0" data-project="employment">
+          <div class="project-art art-employment" aria-hidden="true">
+            <div class="chart-title">IT pathways / SG</div>
+            <div class="bar bar-a"><span>Degree</span></div><div class="bar bar-b"><span>Diploma</span></div>
+            <svg viewBox="0 0 400 150"><path d="M0,124 C60,116 88,90 139,91 S232,65 270,52 S340,31 400,18"/></svg>
+          </div>
+          <div class="project-content">
+            <div class="project-meta"><span>Data analytics Â· 2026</span><span>02</span></div>
+            <h3>Which IT education path pays off?</h3>
+            <p>Singapore employment data translated into a clear comparison of degree and diploma pathways.</p>
+            <div class="tags"><span>Python</span><span>Pandas</span><span>UiPath</span></div>
+            <button class="text-link open-project" type="button">View case study <span>â†—</span></button>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="ai data" tabindex="0" data-project="forecasting">
+          <div class="project-art art-forecast" aria-hidden="true">
+            <div class="forecast-label">FORECAST / 12M</div>
+            <svg viewBox="0 0 500 200"><path class="gridline" d="M0 40H500M0 100H500M0 160H500"/><path class="history" d="M0 150 L48 128 L96 142 L144 98 L192 113 L240 69 L288 82"/><path class="future" d="M288 82 L336 54 L384 71 L432 33 L500 45"/></svg>
+            <span class="forecast-dot"></span>
+          </div>
+          <div class="project-content">
+            <div class="project-meta"><span>Machine learning Â· 2026</span><span>03</span></div>
+            <h3>Segments today. Energy needs tomorrow.</h3>
+            <p>Customer clustering and utility forecasting using interpretable, comparison-led modelling.</p>
+            <div class="tags"><span>K-Means</span><span>SARIMAX</span><span>PCA</span></div>
+            <button class="text-link open-project" type="button">View case study <span>â†—</span></button>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="fullstack" tabindex="0" data-project="rps">
+          <div class="project-art art-rps" aria-hidden="true">
+            <div class="rps-symbols"><span>âœŠ</span><span>âœ‹</span><span>âœŒ</span></div>
+            <div class="match-line"><span>PLAYER</span><b>03 : 02</b><span>SYSTEM</span></div>
+          </div>
+          <div class="project-content">
+            <div class="project-meta"><span>Full-stack Â· 2025</span><span>04</span></div>
+            <h3>A classic game, engineered end-to-end.</h3>
+            <p>An interactive arena with backend game logic, REST APIs, SQL persistence, and responsive interactions.</p>
+            <div class="tags"><span>Node.js</span><span>Express</span><span>SQL</span></div>
+            <button class="text-link open-project" type="button">View case study <span>â†—</span></button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about section-shell" id="about" aria-labelledby="about-title">
+      <div class="about-statement reveal">
+        <p class="section-index">03 / About</p>
+        <h2 id="about-title">Curious about the machinery behind the interface.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p class="lead">Iâ€™m a Year 2 Applied AI & Analytics student at Singapore Polytechnic who likes following a problem all the way downâ€”from the question, through the data, into a working system.</p>
+          <p>My first full-stack project was the turning point. Connecting interface, backend logic, APIs, and a database showed me that difficult integrations are where I learn fastest.</p>
+          <p>Now Iâ€™m looking for an internship where I can contribute careful analysis, strong implementation fundamentals, and the willingness to keep digging.</p>
+        </div>
+        <div class="capability-stack reveal">
+          <div class="capability"><span>01</span><h3>Analyse</h3><p>Pandas, NumPy, statistics, visualisation, Jupyter</p></div>
+          <div class="capability"><span>02</span><h3>Model</h3><p>scikit-learn, TensorFlow, Keras, time series, NLP</p></div>
+          <div class="capability"><span>03</span><h3>Build</h3><p>Python, JavaScript, Node.js, Express, SQL, REST APIs</p></div>
+          <div class="capability"><span>04</span><h3>Collaborate</h3><p>Clear communication, adaptability, teamwork, ownership</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience section-shell" id="experience" aria-labelledby="journey-title">
+      <div class="section-heading reveal">
+        <div><p class="section-index">04 / Journey</p><h2 id="journey-title">Learning in public.<br>Delivering in practice.</h2></div>
+        <p>Academic excellence grounded by real-world customer service, community contribution, and hands-on building.</p>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <div class="time">2025 â€” 2028</div><div class="timeline-marker"></div>
+          <div><p class="timeline-type">Education</p><h3>Diploma in Applied AI & Analytics</h3><p>Singapore Polytechnic Â· CGPA 3.97/4.00 Â· Directorâ€™s Honour Roll</p><p class="detail">Distinctions across programming, backend development, computing, statistics, and mathematics.</p></div>
+        </article>
+        <article class="timeline-item reveal">
+          <div class="time">2025 â€” 2026</div><div class="timeline-marker"></div>
+          <div><p class="timeline-type">Experience</p><h3>Customer Service Â· KFC Singapore</h3><p>Part-time Â· Singapore</p><p class="detail">Built calm communication, adaptability, and time management in a fast-paced operating environment while studying.</p></div>
+        </article>
+        <article class="timeline-item reveal">
+          <div class="time">2024</div><div class="timeline-marker"></div>
+          <div><p class="timeline-type">Community</p><h3>English Teaching Assistant</h3><p>Run Free Education</p><p class="detail">Supported lessons and helped younger learners strengthen their language skills.</p></div>
+        </article>
+      </div>
+      <div class="credentials reveal">
+        <div><span class="credential-number">6A*</span><p>Edexcel IGCSE<br><small>Guarantee International College</small></p></div>
+        <div><span class="credential-number">02</span><p>Selected DataCamp credentials<br><small>Supervised Learning Â· Data Science in Python</small></p></div>
+        <div><span class="credential-number">04</span><p>Student communities<br><small>Apple Developer Society Â· Peer Buddy Â· Memory Sports</small></p></div>
+      </div>
+    </section>
+
+    <section class="contact section-shell" id="contact" aria-labelledby="contact-title">
+      <div class="contact-card reveal">
+        <p class="section-index">05 / Letâ€™s connect</p>
+        <h2 id="contact-title">Have a problem worth<br><em>thinking deeply about?</em></h2>
+        <p>Iâ€™m seeking data, AI, and backend development internships in Singapore. If my way of working fits your team, Iâ€™d love to hear from you.</p>
+        <div class="contact-actions">
+          <a class="button button-light" href="https://www.linkedin.com/in/eaintchunaychi" target="_blank" rel="noreferrer">Message me on LinkedIn <span>â†—</span></a>
+          <a class="button button-outline" href="https://github.com/Chu268" target="_blank" rel="noreferrer">Explore GitHub <span>â†—</span></a>
+        </div>
+        <div class="contact-footer"><span>Eaint Chu Nay Chi</span><span>Singapore Â· <span id="localTime">SGT</span></span><a href="#top">Back to top â†‘</a></div>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="project-dialog" id="projectDialog">
+    <button class="dialog-close" type="button" aria-label="Close case study">Ã—</button>
+    <div class="dialog-index" id="dialogIndex">01 / CASE STUDY</div>
+    <h2 id="dialogTitle"></h2>
+    <p class="dialog-summary" id="dialogSummary"></p>
+    <div class="case-grid">
+      <div><span>Challenge</span><p id="dialogChallenge"></p></div>
+      <div><span>Approach</span><p id="dialogApproach"></p></div>
+      <div><span>Result</span><p id="dialogResult"></p></div>
+    </div>
+    <a class="button button-primary" id="dialogLink" target="_blank" rel="noreferrer">View code on GitHub <span>â†—</span></a>
+  </dialog>
+
+  <dialog class="command-dialog" id="commandDialog">
+    <label for="commandInput">Quick navigation</label>
+    <input id="commandInput" type="text" placeholder="Type a section or actionâ€¦" autocomplete="off">
+    <div class="command-results" id="commandResults">
+      <button data-target="#work"><span>Selected work</span><kbd>W</kbd></button>
+      <button data-target="#about"><span>About me</span><kbd>A</kbd></button>
+      <button data-target="#experience"><span>Journey</span><kbd>J</kbd></button>
+      <button data-target="#contact"><span>Contact</span><kbd>C</kbd></button>
+      <button data-url="https://github.com/Chu268"><span>Open GitHub</span><kbd>â†—</kbd></button>
+    </div>
+    <p class="command-hint"><kbd>â†‘â†“</kbd> navigate <kbd>enter</kbd> select <kbd>esc</kbd> close</p>
+  </dialog>
+</body>
+</html>
+
